@@ -4,6 +4,7 @@ SOURCE="${BASH_SOURCE[0]}"
 LOCAL_DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
 DIR_BIN="$HOME/voxforge/bin" 
 DIR_HTK="$DIR_BIN/htk" 
+DIR_JULIUS="$DIR_BIN/julius-4.3.1" 
 
 gcc_comp=(
 	"gcc-3.4"
@@ -60,8 +61,8 @@ rmFiles()
 
 echo "----------Setup VoxForge----------"
 
-#sudo apt-get -y update
-#sudo apt-get -y upgrade
+sudo apt-get -y update
+sudo apt-get -y upgrade
 
 enterDir "$HOME"
 enterDir "voxforge"
@@ -69,9 +70,9 @@ enterDir "bin"
 
 echo "----------Setup HTK----------"
 
-#copyFiles "$LOCAL_DIR/htk" "$HOME/voxforge/bin"
+copyFiles "$LOCAL_DIR/htk" "$HOME/voxforge/bin"
 
-#install_dependency "GCC compilers" gcc_comp[@] || exit
+install_dependency "GCC compilers" gcc_comp[@] || exit
 
 #echo "-----Updating symbolink for gcc-3.4-----" 
 #sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-3.4 50
@@ -100,4 +101,11 @@ else
 fi
 
 echo "----------Setup Julius----------"
+
+enterDir "$LOCAL_DIR" 
+copyFiles "$LOCAL_DIR/julius-4.3.1" "$HOME/voxforge/bin"
+echo "# User specific environment and startup programs"$'\n' >> ~/.bashrc
+echo "PATH=$PATH:$DIR_HTK/bin:$DIR_JULIUS/bin"$'\n' >> ~/.bashrc
+echo $PATH
+
 
