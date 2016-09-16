@@ -1,0 +1,30 @@
+direita
+esquerda 
+baixo 
+cima 
+centralizar
+menu
+configuração 
+configurações 
+iniciar
+pausar
+parar 
+aumentar visão
+afastar visão
+girar direita 
+girar esquerda 
+iniciar gravação 
+parar gravação 
+inverter controle 
+com controle 
+sem controle
+com controles
+sem controles 
+com marcador
+sem marcador 
+com microfone
+sem microfone
+com centralizar
+sem centralizar 
+achar ferramenta
+clara

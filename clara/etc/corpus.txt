@@ -1,0 +1,30 @@
+<s> direita </s> 
+<s> esquerda </s>
+<s> baixo </s>
+<s> cima </s>
+<s> centralizar </s> 
+<s> menu </s> 
+<s> configuração </s>
+<s> configurações </s>
+<s> iniciar </s> 
+<s> pausar </s> 
+<s> parar </s>
+<s> aumentar visão </s> 
+<s> afastar visão </s> 
+<s> girar direita </s>
+<s> girar esquerda </s>
+<s> iniciar gravação </s>
+<s> parar gravação </s>
+<s> inverter controle </s>
+<s> com controle </s>
+<s> sem controle </s> 
+<s> com controles </s> 
+<s> sem controles </s>
+<s> com marcador </s> 
+<s> sem marcador </s>
+<s> com microfone </s> 
+<s> sem microfone </s> 
+<s> com centralizar </s> 
+<s> sem centralizar </s>
+<s> achar ferramenta </s> 
+<s> clara </s> 

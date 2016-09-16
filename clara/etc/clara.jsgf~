@@ -1,0 +1,28 @@
+#JSGF V1.0;
+
+/**
+ * JSGF Grammar for CLARA
+ */
+
+grammar clara;
+
+public <commands> = <flag> | <directionsX> | <directionsY> | <actions> | <center> | <media> | <flow> | <controlVision> <vision> | <spin> <directionsX> | <media> <record> | <turn> <joystick> | <turn> <feature> | <turn> <center> | <find> <tool>;
+
+<spin> = [ girar ];
+<vision> = [ visão ];
+<find> = [ achar ];
+<tool> = [ ferramenta ];
+<flag> = [ clara ];
+<record> = [ gravação ];
+<directionsX> = [ direita | esquerda ];
+<directionsY> = [ cima | baixo ];
+<media> = [ iniciar | parar | para ];
+<actions> = [ iniciar | inicia | pausar | pausa ];
+<center> = [centralizar | centraliza ];
+<flow> = [ menu | configuração | configurações ];
+<joystick> = [ controle | controles ];
+<turn> = [ com | sem ];
+<switch> = [ inverte | inverter ];
+<feature> = [ marcador | microfone ];
+<controlVision> = [ aumentar | afastar ];
+
