@@ -1,0 +1,75 @@
+sil clara direita sil
+sil clara esquerda sil
+
+sil clara cima sil
+sil clara baixo sil
+
+sil clara centralizar sil
+sil clara centralizar sil
+
+sil clara iniciar sil
+sil clara inicia sil
+sil clara pausar sil
+sil clara pausa sil
+sil clara parar sil
+sil clara para sil
+sil clara retomar sil
+sil clara retoma sil
+
+sil clara aumentar visão sil
+sil clara afastar visão sil
+sil clara aumentar camera sil
+sil clara afastar camera sil
+
+sil clara girar direita sil
+sil clara girar esquerda sil
+sil clara gira direita sil
+sil clara gira esquerda sil
+
+sil clara girar para direita sil
+sil clara girar para esquerda sil
+sil clara gira para direita sil
+sil clara gira para esquerda sil
+sil clara girar pra direita sil
+sil clara girar pra esquerda sil
+sil clara gira pra direita sil
+sil clara gira pra esquerda sil
+
+sil clara iniciar gravação sil
+sil clara inicia gravação sil
+sil clara pausar gravação sil
+sil clara pausa gravação sil
+sil clara parar gravação sil
+sil clara para gravação sil
+sil clara retomar gravação sil
+sil clara retoma gravação sil
+
+sil clara com controle sil
+sil clara sem controle sil
+sil clara com controles sil
+sil clara sem controles sil
+
+sil clara com marcador sil
+sil clara sem marcador sil
+sil clara com marcado sil
+sil clara sem marcado sil
+sil clara com microfone sil
+sil clara sem microfone sil
+
+sil clara com centralizar sil
+sil clara sem centralizar sil
+sil clara com centraliza sil
+sil clara sem centraliza sil
+
+sil clara achar ferramenta sil
+sil clara acha ferramenta sil
+sil clara procura ferramenta sil
+
+sil clara menu sil
+sil clara configuração sil
+sil clara configurações sil
+
+sil clara inverte controle sil
+sil clara inverte controles sil
+sil clara inverter controle sil
+sil clara inverter controles sil
