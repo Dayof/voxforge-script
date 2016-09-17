@@ -47,9 +47,8 @@ echo "----------Setup VoxForge----------"
 sudo apt-get -y update
 sudo apt-get -y upgrade
 
-enterDir "$HOME"
-enterDir "voxforge"
-enterDir "bin" 
+enterDir "$HOME/voxforge"
+enterDir "$DIR_BIN" 
 
 echo "----------Setup HTK----------"
 
@@ -57,31 +56,19 @@ copyFiles "$LOCAL_DIR/htk" "$HOME/voxforge/bin"
 
 install_dependency "GCC compilers" "gcc-3.4 g++-3.4 libx11-dev:i386 libx11-dev" || exit
 
-#echo "-----Updating symbolink for gcc-3.4-----" 
-#sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-3.4 50
-#sudo update-alternatives --install /usr/bin/g++ gcc /usr/bin/g++-3.4 50
-#sudo ln -s gcc-3.4 gcc34
-#sudo ln -s g++-3.4 g++34
-
 echo "-----Configure HTK for 64-bit System-----" 
-#linux32 "$DIR_HTK"/./configure CC=gcc34 --prefix="$DIR_HTK"
-linux32 "$DIR_HTK"/./configure --prefix="$DIR_HTK" --disable-hslab
+#enterDir "$DIR_HTK" 
+linux32 ./configure --prefix="$DIR_HTK"
 
 echo "-----Build the libraries and binaries of HTK-----" 
 enterDir "$DIR_HTK" 
 sudo make -j $nproc
-sudo make install
+sudo make install	
 if [ $? -eq 0 ]; then
-    echo "-----Done installing HTK!-----"
+    echo "-----Done installing HTK!-----"	
 else
-	pwd
-	echo "-----Error in Makefile of HTK, trying to fix-----"
+	echo "-----Error in Makefile of HTK, try to fix-----"
 	exit
-	#enterDir "$LOCAL_DIR" 
-	#rmFiles "$DIR_HTK/HLMTools/Makefile"
-    	#copyFiles "$LOCAL_DIR/Makefile" "$DIR_HTK/HLMTools"
-	#sudo make install
-	#echo "-----Fixed error in Makefile of HTK-----"
 fi
 
 echo "----------Setup Julius----------"
