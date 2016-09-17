@@ -64,6 +64,7 @@ sil clara sem centraliza sil
 sil clara achar ferramenta sil
 sil clara acha ferramenta sil
 sil clara procura ferramenta sil
+sil clara procurar ferramenta sil
 
 sil clara menu sil
 sil clara configuração sil
