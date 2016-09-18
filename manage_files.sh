@@ -2,12 +2,18 @@
 
 SOURCE="${BASH_SOURCE[0]}"
 LOCAL_DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
+
+DIR_SCRIPTS="$LOCAL_DIR/scripts" 
+DIR_CLARA="$LOCAL_DIR/clara" 
+DIR_SPEAKER_01="$DIR_CLARA/wav/speaker_01" 
+
 DIR_BIN="$HOME/voxforge/bin" 
 DIR_HTK="$DIR_BIN/htk" 
 DIR_JULIUS="$DIR_BIN/julius-4.3.1" 
-DIR_SCRIPTS="$LOCAL_DIR/scripts" 
+
 DIR_TUTORIAL="$HOME/voxforge/tutorial" 
-DIR_CLARA="$LOCAL_DIR/clara" 
+DIR_TRAIN="$HOME/voxforge/train" 
+DIR_WAV="$DIR_TRAIN/wav" 
 
 createDir()
 {
@@ -33,6 +39,8 @@ copyFiles()
 }
 
 createDir "$DIR_TUTORIAL"
+createDir "$DIR_TRAIN"
+createDir "$DIR_WAV"
 
 copyFiles "$DIR_CLARA/clara.grammar" "$DIR_TUTORIAL"
 copyFiles "$DIR_CLARA/clara.voca" "$DIR_TUTORIAL"
@@ -43,3 +51,5 @@ copyFiles "$DIR_SCRIPTS/dict2phone.py" "$DIR_BIN"
 copyFiles "$DIR_SCRIPTS/mono0.py" "$DIR_BIN"
 copyFiles "$DIR_SCRIPTS/mkdfa.jl" "$DIR_BIN"
 copyFiles "$DIR_SCRIPTS/prompts2wlist.jl" "$DIR_BIN"
+
+copyFiles "$DIR_SPEAKER_01" "$DIR_WAV"

@@ -25,41 +25,41 @@
 */sample025 com microfone
 */sample026 sem microfone
 */sample027 com centralizar
-*/sample029 sem centralizar
-*/sample030 achar ferramenta
-*/sample031 clara
-*/sample032 inverte controle
-*/sample033 inverter controles
-*/sample034 inverte controles
-*/sample035 centraliza
-*/sample036 configurar
-*/sample037 inicia
-*/sample038 pausa
-*/sample039 para
-*/sample040 com centraliza
-*/sample041 sem centraliza
-*/sample042 retomar
-*/sample043 retoma
-*/sample044 aumentar camera
-*/sample045 afastar camera
-*/sample046 gira direita
-*/sample047 gira esquerda
-*/sample048 girar para direita
-*/sample049 girar para esquerda
-*/sample050 gira para direita
-*/sample051 gira para esquerda
-*/sample052 girar pra direita
-*/sample053 girar pra esquerda
-*/sample054 gira pra direita
-*/sample055 gira pra esquerda
-*/sample056 inicia gravação
-*/sample057 pausar gravação
-*/sample058 pausa gravação
-*/sample059 para gravação
-*/sample060 retomar gravação
-*/sample061 retoma gravação
-*/sample062 com marcado
-*/sample063 sem marcado
-*/sample064 acha ferramenta
-*/sample065 procurar ferramenta
-*/sample066 procura ferramenta
+*/sample028 sem centralizar
+*/sample029 achar ferramenta
+*/sample030 clara
+*/sample031 inverte controle
+*/sample032 inverter controles
+*/sample033 inverte controles
+*/sample034 centraliza
+*/sample035 configurar
+*/sample036 inicia
+*/sample037 pausa
+*/sample038 para
+*/sample039 com centraliza
+*/sample040 sem centraliza
+*/sample041 retomar
+*/sample042 retoma
+*/sample043 aumentar camera
+*/sample044 afastar camera
+*/sample045 gira direita
+*/sample046 gira esquerda
+*/sample047 girar para direita
+*/sample048 girar para esquerda
+*/sample049 gira para direita
+*/sample050 gira para esquerda
+*/sample051 girar pra direita
+*/sample052 girar pra esquerda
+*/sample053 gira pra direita
+*/sample054 gira pra esquerda
+*/sample055 inicia gravação
+*/sample056 pausar gravação
+*/sample057 pausa gravação
+*/sample058 para gravação
+*/sample059 retomar gravação
+*/sample060 retoma gravação
+*/sample061 com marcado
+*/sample062 sem marcado
+*/sample063 acha ferramenta
+*/sample064 procurar ferramenta
+*/sample065 procura ferramenta
