@@ -5,6 +5,7 @@ file_dic = open("dict", 'w')
 file_phones = open("monophones1", 'w')
 file_phones_est = open("dlog", 'w')
 file_report = open("report", 'w')
+file_phones0 = open("monophones0", 'w')
 
 # declare default data
 phones = set()
@@ -80,6 +81,9 @@ for x in list_clara_dict:
 # write data on phones file
 for i in phones:
 	file_phones.write(i+'\n')
+	if i != "sp":
+		file_phones0.write(i+'\n')
+
 
 # write data on statistic file
 file_phones_est.write("Phone Counts\n---------------------\n")
@@ -112,6 +116,7 @@ if alert:
 file_phones.close()
 file_phones_est.close()
 file_report.close()
+file_phones0.close()
 
-print "Done creating dict, monophones1, dlog and report!"
+print "Done creating dict, monophones1, monophones0, dlog and report!"
 
