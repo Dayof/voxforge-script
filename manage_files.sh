@@ -55,6 +55,7 @@ copyFiles "$DIR_CLARA/clara_lexicon" "$DIR_TUTORIAL"
 copyFiles "$DIR_CLARA/codetrain.scp" "$DIR_TUTORIAL"
 copyFiles "$DIR_CLARA/train.scp" "$DIR_TUTORIAL"
 
+copyFiles "$DIR_SCRIPTS/macros.py" "$DIR_BIN"
 copyFiles "$DIR_SCRIPTS/formatHmmdefs.py" "$DIR_BIN"
 copyFiles "$DIR_SCRIPTS/dict2phone.py" "$DIR_BIN"
 copyFiles "$DIR_SCRIPTS/mkdfa.jl" "$DIR_BIN"

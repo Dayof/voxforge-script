@@ -18,8 +18,6 @@ for i, line in enumerate(file_proto):
 
 l_lines_proto=lines_proto.split("\n")
 
-file_proto.close()
-
 file_new_hmmdefs = open("hmmdefs", 'w')
 
 for x in list_hmm_formated:	
@@ -28,4 +26,6 @@ for x in list_hmm_formated:
 		file_new_hmmdefs.write(y+'\n')
 
 file_new_hmmdefs.write('\n')
+
+file_proto.close()
 file_new_hmmdefs.close()

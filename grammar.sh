@@ -56,3 +56,7 @@ mv "$DIR_HMM0/monophones0" "$DIR_HMM0/hmmdefs"
 enterDir "$DIR_HMM0"
 python ../../bin/formatHmmdefs.py
 echo "----------Done hmmdefs----------"
+
+echo "----------Generating macros----------"
+python ../../bin/macros.py
+echo "----------Done macros----------"
