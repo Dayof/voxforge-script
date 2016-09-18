@@ -34,3 +34,8 @@ echo "----------Done monophones 0 and 1----------"
 echo "----------Generating MLF (Master Label File) from prompt file----------"
 julia ../bin/prompts2mlf.jl prompts.txt words.mlf
 echo "----------Done MLF----------"
+
+echo "----------Generating Word Level Transcriptions to Phone Level Transcriptions----------"
+HLEd -A -D -T 1 -l '*' -d dict -i phones0.mlf mkphones0.led words.mlf 
+HLEd -A -D -T 1 -l '*' -d dict -i phones1.mlf mkphones1.led words.mlf 
+echo "----------Done HLed----------"

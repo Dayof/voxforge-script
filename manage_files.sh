@@ -52,4 +52,7 @@ copyFiles "$DIR_SCRIPTS/mkdfa.jl" "$DIR_BIN"
 copyFiles "$DIR_SCRIPTS/prompts2wlist.jl" "$DIR_BIN"
 copyFiles "$DIR_SCRIPTS/prompts2mlf.jl" "$DIR_BIN"
 
+copyFiles "$DIR_SCRIPTS/mkphones0.led" "$DIR_TUTORIAL"
+copyFiles "$DIR_SCRIPTS/mkphones1.led" "$DIR_TUTORIAL"
+
 copyFiles "$DIR_SPEAKER_01" "$DIR_WAV"
