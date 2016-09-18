@@ -48,8 +48,8 @@ copyFiles "$DIR_CLARA/prompts.txt" "$DIR_TUTORIAL"
 copyFiles "$DIR_CLARA/clara_lexicon" "$DIR_TUTORIAL"
 
 copyFiles "$DIR_SCRIPTS/dict2phone.py" "$DIR_BIN"
-copyFiles "$DIR_SCRIPTS/mono0.py" "$DIR_BIN"
 copyFiles "$DIR_SCRIPTS/mkdfa.jl" "$DIR_BIN"
 copyFiles "$DIR_SCRIPTS/prompts2wlist.jl" "$DIR_BIN"
+copyFiles "$DIR_SCRIPTS/prompts2mlf.jl" "$DIR_BIN"
 
 copyFiles "$DIR_SPEAKER_01" "$DIR_WAV"

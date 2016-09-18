@@ -27,10 +27,10 @@ echo "----------Generating word lists from prompt file----------"
 julia ../bin/prompts2wlist.jl prompts.txt wlist
 echo "----------Done word lists----------"
 
-echo "----------Generating monophones0----------"
+echo "----------Generating monophones 0 and 1----------"
 python ../bin/dict2phone.py 
-echo "----------Done monophones0----------"
+echo "----------Done monophones 0 and 1----------"
 
-echo "----------Generating monophones1----------"
-python ../bin/mono0.py 
-echo "----------Done monophones1----------"
+echo "----------Generating MLF (Master Label File) from prompt file----------"
+julia ../bin/prompts2mlf.jl prompts.txt words.mlf
+echo "----------Done MLF----------"
