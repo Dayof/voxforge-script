@@ -5,7 +5,7 @@ LOCAL_DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
 DIR_BIN="$HOME/voxforge/bin" 
 DIR_HTK="$DIR_BIN/htk" 
 DIR_JULIUS="$DIR_BIN/julius-4.3.1" 
-DIR_GRAMMAR="$LOCAL_DIR/grammar" 
+DIR_GRAMMAR="$LOCAL_DIR/scripts" 
 DIR_TUTORIAL="$HOME/voxforge/tutorial" 
 DIR_CLARA="$LOCAL_DIR/clara" 
 
@@ -33,7 +33,12 @@ copyFiles()
 }
 
 createDir "$DIR_TUTORIAL"
+
 copyFiles "$DIR_CLARA/clara.grammar" "$DIR_TUTORIAL"
 copyFiles "$DIR_CLARA/clara.voca" "$DIR_TUTORIAL"
+copyFiles "$DIR_CLARA/prompts.txt" "$DIR_TUTORIAL"
+copyFiles "$DIR_CLARA/clara_lexicon" "$DIR_TUTORIAL"
 
+copyFiles "$DIR_GRAMMAR/dict2phone.py" "$DIR_BIN"
 copyFiles "$DIR_GRAMMAR/mkdfa.jl" "$DIR_BIN"
+copyFiles "$DIR_GRAMMAR/prompts2wlist.jl" "$DIR_BIN"
