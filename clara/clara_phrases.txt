@@ -1,76 +1,79 @@
-sil clara direita sil
-sil clara esquerda sil
+sil clara sil
 
-sil clara cima sil
-sil clara baixo sil
+sil direita sil
+sil esquerda sil
 
-sil clara centralizar sil
-sil clara centraliza sil
+sil cima sil
+sil baixo sil
 
-sil clara iniciar sil
-sil clara inicia sil
-sil clara pausar sil
-sil clara pausa sil
-sil clara parar sil
-sil clara para sil
-sil clara retomar sil
-sil clara retoma sil
+sil centralizar sil
+sil centraliza sil
 
-sil clara aumentar visão sil
-sil clara afastar visão sil
-sil clara aumentar camera sil
-sil clara afastar camera sil
+sil iniciar sil
+sil inicia sil
+sil pausar sil
+sil pausa sil
+sil parar sil
+sil para sil
+sil retomar sil
+sil retoma sil
 
-sil clara girar direita sil
-sil clara girar esquerda sil
-sil clara gira direita sil
-sil clara gira esquerda sil
+sil aumentar visão sil
+sil afastar visão sil
+sil aumentar camera sil
+sil afastar camera sil
 
-sil clara girar para direita sil
-sil clara girar para esquerda sil
-sil clara gira para direita sil
-sil clara gira para esquerda sil
-sil clara girar pra direita sil
-sil clara girar pra esquerda sil
-sil clara gira pra direita sil
-sil clara gira pra esquerda sil
+sil girar direita sil
+sil girar esquerda sil
+sil gira direita sil
+sil gira esquerda sil
 
-sil clara iniciar gravação sil
-sil clara inicia gravação sil
-sil clara pausar gravação sil
-sil clara pausa gravação sil
-sil clara parar gravação sil
-sil clara para gravação sil
-sil clara retomar gravação sil
-sil clara retoma gravação sil
+sil girar para direita sil
+sil girar para esquerda sil
+sil gira para direita sil
+sil gira para esquerda sil
+sil girar pra direita sil
+sil girar pra esquerda sil
+sil gira pra direita sil
+sil gira pra esquerda sil
 
-sil clara com controle sil
-sil clara sem controle sil
-sil clara com controles sil
-sil clara sem controles sil
+sil iniciar gravação sil
+sil inicia gravação sil
+sil pausar gravação sil
+sil pausa gravação sil
+sil parar gravação sil
+sil para gravação sil
+sil retomar gravação sil
+sil retoma gravação sil
 
-sil clara com marcador sil
-sil clara sem marcador sil
-sil clara com marcado sil
-sil clara sem marcado sil
-sil clara com microfone sil
-sil clara sem microfone sil
+sil com controle sil
+sil sem controle sil
+sil com controles sil
+sil sem controles sil
 
-sil clara com centralizar sil
-sil clara sem centralizar sil
-sil clara com centraliza sil
-sil clara sem centraliza sil
+sil com marcador sil
+sil sem marcador sil
+sil com marcado sil
+sil sem marcado sil
+sil com microfone sil
+sil sem microfone sil
 
-sil clara achar ferramenta sil
-sil clara acha ferramenta sil
-sil clara procura ferramenta sil
-sil clara procurar ferramenta sil
+sil com centralizar sil
+sil sem centralizar sil
+sil com centraliza sil
+sil sem centraliza sil
 
-sil clara menu sil
-sil clara configuração sil
-sil clara configurações sil
+sil achar ferramenta sil
+sil acha ferramenta sil
+sil procura ferramenta sil
+sil procurar ferramenta sil
 
-sil clara inverte controle sil
-sil clara inverte controles sil
-sil clara inverter controle sil
-sil clara inverter controles sil
+sil menu sil
+sil configuração sil
+sil configurações sil
+sil configurar sil
+
+sil inverte controle sil
+sil inverte controles sil
+sil inverter controle sil
+sil inverter controles sil
