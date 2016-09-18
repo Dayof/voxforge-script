@@ -49,3 +49,10 @@ echo "----------Done MFCC----------"
 echo "----------Generating new version of prototype model----------"
 HCompV -A -D -T 1 -C config -f 0.01 -m -S train.scp -M hmm0 proto
 echo "----------Done new proto----------"
+
+echo "----------Generating hmmdefs----------"
+cp "monophones0" "$DIR_HMM0"
+mv "$DIR_HMM0/monophones0" "$DIR_HMM0/hmmdefs"
+enterDir "$DIR_HMM0"
+python ../../bin/formatHmmdefs.py
+echo "----------Done hmmdefs----------"
