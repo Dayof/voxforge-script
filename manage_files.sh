@@ -16,6 +16,7 @@ DIR_TRAIN="$HOME/voxforge/train"
 DIR_WAV="$DIR_TRAIN/wav" 
 DIR_MFCC="$DIR_TRAIN/mfcc" 
 DIR_MFCC_01="$DIR_MFCC/speaker_01" 
+DIR_HMM0="$DIR_TUTORIAL/hmm0" 
 
 createDir()
 {
@@ -45,19 +46,23 @@ createDir "$DIR_TRAIN"
 createDir "$DIR_WAV"
 createDir "$DIR_MFCC"
 createDir "$DIR_MFCC_01"
+createDir "$DIR_HMM0"
 
 copyFiles "$DIR_CLARA/clara.grammar" "$DIR_TUTORIAL"
 copyFiles "$DIR_CLARA/clara.voca" "$DIR_TUTORIAL"
 copyFiles "$DIR_CLARA/prompts.txt" "$DIR_TUTORIAL"
 copyFiles "$DIR_CLARA/clara_lexicon" "$DIR_TUTORIAL"
 copyFiles "$DIR_CLARA/codetrain.scp" "$DIR_TUTORIAL"
+copyFiles "$DIR_CLARA/train.scp" "$DIR_TUTORIAL"
 
 copyFiles "$DIR_SCRIPTS/dict2phone.py" "$DIR_BIN"
 copyFiles "$DIR_SCRIPTS/mkdfa.jl" "$DIR_BIN"
 copyFiles "$DIR_SCRIPTS/prompts2wlist.jl" "$DIR_BIN"
 copyFiles "$DIR_SCRIPTS/prompts2mlf.jl" "$DIR_BIN"
-copyFiles "$DIR_SCRIPTS/wav_config" "$DIR_TUTORIAL"
 
+copyFiles "$DIR_SCRIPTS/wav_config" "$DIR_TUTORIAL"
+copyFiles "$DIR_SCRIPTS/proto" "$DIR_TUTORIAL"
+copyFiles "$DIR_SCRIPTS/config" "$DIR_TUTORIAL"
 copyFiles "$DIR_SCRIPTS/mkphones0.led" "$DIR_TUTORIAL"
 copyFiles "$DIR_SCRIPTS/mkphones1.led" "$DIR_TUTORIAL"
 

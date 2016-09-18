@@ -12,6 +12,8 @@ DIR_JULIUS="$DIR_BIN/julius-4.3.1"
 DIR_TUTORIAL="$HOME/voxforge/tutorial" 
 DIR_TRAIN="$HOME/voxforge/train" 
 DIR_WAV="$HOME/voxforge/wav" 
+DIR_HMM0="$DIR_TUTORIAL/hmm0" 
+
 enterDir()
 { 
 	cd "$1" || exit
@@ -44,3 +46,6 @@ echo "----------Generating MFCC files from WAV----------"
 HCopy -A -D -T 1 -C wav_config -S codetrain.scp 
 echo "----------Done MFCC----------"
 
+echo "----------Generating new version of prototype model----------"
+HCompV -A -D -T 1 -C config -f 0.01 -m -S train.scp -M hmm0 proto
+echo "----------Done new proto----------"
