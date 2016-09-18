@@ -5,7 +5,7 @@ sil clara cima sil
 sil clara baixo sil
 
 sil clara centralizar sil
-sil clara centralizar sil
+sil clara centraliza sil
 
 sil clara iniciar sil
 sil clara inicia sil
