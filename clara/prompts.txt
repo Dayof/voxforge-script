@@ -1,0 +1,60 @@
+*/sample1 clara cima
+*/sample2 clara baixo
+*/sample3 clara menu
+*/sample4 clara configuração
+*/sample5 clara direita
+*/sample6 clara esquerda
+*/sample7 clara iniciar gravação
+*/sample8 clara inicia gravação
+*/sample9 clara pausar gravação
+*/sample10 clara pausa gravação
+*/sample11 clara parar gravação
+*/sample12 clara para gravação
+*/sample13 clara retomar gravação
+*/sample14 clara retoma gravação
+*/sample15 clara aumentar camera
+*/sample16 clara aumentar visão
+*/sample17 clara afastar camera
+*/sample18 clara afastar visão
+*/sample19 clara girar direita
+*/sample20 clara girar esquerda
+*/sample21 clara girar para direita
+*/sample22 clara girar para esquerda
+*/sample23 clara girar pra direita
+*/sample24 clara girar pra esquerda
+*/sample25 clara gira pra direita
+*/sample26 clara gira pra esquerda
+*/sample27 clara inverter controles
+*/sample28 clara inverter controle
+*/sample29 clara inverte controles
+*/sample30 clara inverte controle
+*/sample31 clara com microfone
+*/sample32 clara sem microfone
+*/sample33 clara com marcador
+*/sample34 clara sem marcador
+*/sample35 clara com controles
+*/sample36 clara com controle
+*/sample37 clara sem controles
+*/sample38 clara sem controle
+*/sample39 clara com centralizar
+*/sample40 clara com centraliza
+*/sample41 clara sem centralizar
+*/sample42 clara sem centraliza
+*/sample43 clara centralizar
+*/sample44 clara centraliza
+*/sample45 clara achar ferramenta
+*/sample46 clara acha ferramenta
+*/sample47 clara procurar ferramenta
+*/sample48 clara procura ferramenta
+*/sample49 clara iniciar 
+*/sample50 clara inicia 
+*/sample51 clara pausar 
+*/sample52 clara pausa 
+*/sample53 clara parar
+*/sample54 clara para 
+*/sample55 clara retomar
+*/sample56 clara retoma 
+*/sample57 clara configurações
+*/sample58 clara com marcado
+*/sample59 clara sem marcado
+
