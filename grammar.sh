@@ -24,6 +24,10 @@ echo "----------Generating word lists from prompt file----------"
 julia ../bin/prompts2wlist.jl prompts.txt wlist
 echo "----------Done word lists----------"
 
-echo "----------Generating monophones----------"
+echo "----------Generating monophones0----------"
 python ../bin/dict2phone.py 
-echo "----------Done monophones----------"
+echo "----------Done monophones0----------"
+
+echo "----------Generating monophones1----------"
+python ../bin/mono0.py 
+echo "----------Done monophones1----------"
