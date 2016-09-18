@@ -1,68 +1,65 @@
-*/sample1 direita
-*/sample2 esquerda
-*/sample3 baixo
-*/sample4 cima
-*/sample5 centralizar
-*/sample6 menu
-*/sample7 configuração
-*/sample8 configurações
-*/sample9 iniciar
-*/sample10 pausar
-*/sample11 parar
-*/sample12 aumentar visão
-*/sample13 afastar visão
-*/sample14 girar direita
-*/sample15 girar esquerda
-*/sample16 iniciar gravação
-*/sample17 parar gravação
-*/sample18 inverter controle
-*/sample19 com controle
-*/sample20 sem controle
-*/sample21 com controles
-*/sample22 sem controles
-*/sample23 com marcador
-*/sample24 sem marcador
-*/sample25 com microfone
-*/sample26 sem microfone
-*/sample27 com centralizar
-*/sample29 sem centralizar
-*/sample30 achar ferramenta
-*/sample31 clara
-*/sample32 inverte controle
-*/sample33 inverter controles
-*/sample34 inverte controles
-*/sample35 centraliza
-*/sample36 configurar
-*/sample37 inicia
-*/sample38 pausa
-*/sample39 para
-*/sample40 com centraliza
-*/sample41 sem centraliza
-*/sample42 retomar
-*/sample43 retoma
-*/sample44 aumentar camera
-*/sample45 afastar camera
-*/sample46 gira direita
-*/sample47 gira esquerda
-*/sample48 girar para direita
-*/sample49 girar para esquerda
-*/sample50 gira para direita
-*/sample51 gira para esquerda
-*/sample52 girar pra direita
-*/sample53 girar pra esquerda
-*/sample54 gira pra direita
-*/sample55 gira pra esquerda
-*/sample56 inicia gravação
-*/sample57 pausar gravação
-*/sample58 pausa gravação
-*/sample59 para gravação
-*/sample60 retomar gravação
-*/sample61 retoma gravação
-*/sample62 com marcado
-*/sample63 sem marcado
-*/sample64 acha ferramenta
-*/sample65 procurar ferramenta
-*/sample66 procura ferramenta
-
-
-
+*/sample001 direita
+*/sample002 esquerda
+*/sample003 baixo
+*/sample004 cima
+*/sample005 centralizar
+*/sample006 menu
+*/sample007 configuração
+*/sample008 configurações
+*/sample009 iniciar
+*/sample010 pausar
+*/sample011 parar
+*/sample012 aumentar visão
+*/sample013 afastar visão
+*/sample014 girar direita
+*/sample015 girar esquerda
+*/sample016 iniciar gravação
+*/sample017 parar gravação
+*/sample018 inverter controle
+*/sample019 com controle
+*/sample020 sem controle
+*/sample021 com controles
+*/sample022 sem controles
+*/sample023 com marcador
+*/sample024 sem marcador
+*/sample025 com microfone
+*/sample026 sem microfone
+*/sample027 com centralizar
+*/sample029 sem centralizar
+*/sample030 achar ferramenta
+*/sample031 clara
+*/sample032 inverte controle
+*/sample033 inverter controles
+*/sample034 inverte controles
+*/sample035 centraliza
+*/sample036 configurar
+*/sample037 inicia
+*/sample038 pausa
+*/sample039 para
+*/sample040 com centraliza
+*/sample041 sem centraliza
+*/sample042 retomar
+*/sample043 retoma
+*/sample044 aumentar camera
+*/sample045 afastar camera
+*/sample046 gira direita
+*/sample047 gira esquerda
+*/sample048 girar para direita
+*/sample049 girar para esquerda
+*/sample050 gira para direita
+*/sample051 gira para esquerda
+*/sample052 girar pra direita
+*/sample053 girar pra esquerda
+*/sample054 gira pra direita
+*/sample055 gira pra esquerda
+*/sample056 inicia gravação
+*/sample057 pausar gravação
+*/sample058 pausa gravação
+*/sample059 para gravação
+*/sample060 retomar gravação
+*/sample061 retoma gravação
+*/sample062 com marcado
+*/sample063 sem marcado
+*/sample064 acha ferramenta
+*/sample065 procurar ferramenta
+*/sample066 procura ferramenta
