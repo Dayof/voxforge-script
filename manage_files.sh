@@ -13,6 +13,7 @@ DIR_JULIUS="$DIR_BIN/julius-4.3.1"
 
 DIR_TUTORIAL="$HOME/voxforge/tutorial" 
 DIR_TRAIN="$HOME/voxforge/train" 
+DIR_MANUAL="$HOME/voxforge/manual" 
 DIR_WAV="$DIR_TRAIN/wav" 
 DIR_MFCC="$DIR_TRAIN/mfcc" 
 DIR_MFCC_01="$DIR_MFCC/speaker_01" 
@@ -50,6 +51,7 @@ copyFiles()
 
 createDir "$DIR_TUTORIAL"
 createDir "$DIR_TRAIN"
+createDir "$DIR_MANUAL"
 createDir "$DIR_WAV"
 createDir "$DIR_MFCC"
 createDir "$DIR_MFCC_01"
@@ -76,5 +78,7 @@ copyFiles "$DIR_SCRIPTS/proto" "$DIR_TUTORIAL"
 copyFiles "$DIR_SCRIPTS/config" "$DIR_TUTORIAL"
 copyFiles "$DIR_SCRIPTS/mkphones0.led" "$DIR_TUTORIAL"
 copyFiles "$DIR_SCRIPTS/mkphones1.led" "$DIR_TUTORIAL"
+
+copyFiles "$DIR_CLARA/clara.jconf" "$DIR_MANUAL"
 
 copyFiles "$DIR_SPEAKER_01" "$DIR_WAV"

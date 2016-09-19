@@ -10,11 +10,13 @@ DIR_HTK="$DIR_BIN/htk"
 DIR_JULIUS="$DIR_BIN/julius-4.3.1" 
 
 DIR_TUTORIAL="$HOME/voxforge/tutorial" 
-DIR_TRAIN="$HOME/voxforge/train" 
+DIR_TRAIN="$HOME/voxforge/train"
+DIR_MANUAL="$HOME/voxforge/manual"  
 DIR_WAV="$HOME/voxforge/wav" 
 DIR_HMM0="$DIR_TUTORIAL/hmm0" 
 DIR_HMM3="$DIR_TUTORIAL/hmm3" 
-DIR_HMM4="$DIR_TUTORIAL/hmm4" 
+DIR_HMM4="$DIR_TUTORIAL/hmm4"
+DIR_HMM9="$DIR_TUTORIAL/hmm9" 
 
 enterDir()
 { 
@@ -81,3 +83,17 @@ HHEd -A -D -T 1 -H hmm4/macros -H hmm4/hmmdefs -M hmm5 sil.hed monophones1
 HERest -A -D -T 1 -C config  -I phones1.mlf -t 250.0 150.0 3000.0 -S train.scp -H hmm5/macros -H  hmm5/hmmdefs -M hmm6 monophones1
 HERest -A -D -T 1 -C config  -I phones1.mlf -t 250.0 150.0 3000.0 -S train.scp -H hmm6/macros -H hmm6/hmmdefs -M hmm7 monophones1
 echo "----------Done tie----------"
+
+echo "----------Realigning the Training Data----------"
+HVite -A -D -T 1 -l '*' -o SWT -b "</s>" -C config -H hmm7/macros -H hmm7/hmmdefs -i aligned.mlf -m -t 250.0 150.0 1000.0 -y lab -a -I words.mlf -S train.scp dict monophones1> HVite_log
+HERest -A -D -T 1 -C config -I aligned.mlf -t 250.0 150.0 3000.0 -S train.scp -H hmm7/macros -H hmm7/hmmdefs -M hmm8 monophones1 
+HERest -A -D -T 1 -C config -I aligned.mlf -t 250.0 150.0 3000.0 -S train.scp -H hmm8/macros -H hmm8/hmmdefs -M hmm9 monophones1
+echo "----------Done realigning----------"
+
+echo "----------Config and run Julius----------"
+cp "$DIR_TUTORIAL/clara.dfa" "$DIR_MANUAL"
+cp "$DIR_TUTORIAL/clara.dict" "$DIR_MANUAL"
+cp "$DIR_HMM9/hmmdefs" "$DIR_MANUAL"
+enterDir "$DIR_MANUAL"
+julius -input mic -C clara.jconf 
+echo "----------Done julius----------"
