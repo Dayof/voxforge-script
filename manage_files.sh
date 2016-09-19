@@ -20,7 +20,7 @@ DIR_MFCC_01="$DIR_MFCC/speaker_01"
 
 createHMMs()
 {
-	for i in {0..9}
+	for i in {0..12}
 	do
 		createDir "$DIR_TUTORIAL/hmm$i"
 	done
@@ -71,7 +71,9 @@ copyFiles "$DIR_SCRIPTS/dict2phone.py" "$DIR_BIN"
 copyFiles "$DIR_SCRIPTS/mkdfa.jl" "$DIR_BIN"
 copyFiles "$DIR_SCRIPTS/prompts2wlist.jl" "$DIR_BIN"
 copyFiles "$DIR_SCRIPTS/prompts2mlf.jl" "$DIR_BIN"
+copyFiles "$DIR_SCRIPTS/mktrihed.jl" "$DIR_BIN"
 
+copyFiles "$DIR_SCRIPTS/mktri.led" "$DIR_TUTORIAL"
 copyFiles "$DIR_SCRIPTS/sil.hed" "$DIR_TUTORIAL"
 copyFiles "$DIR_SCRIPTS/wav_config" "$DIR_TUTORIAL"
 copyFiles "$DIR_SCRIPTS/proto" "$DIR_TUTORIAL"

@@ -78,7 +78,6 @@ cp "$DIR_HMM0/sil_hmm.txt" "$DIR_HMM4"
 enterDir "$DIR_HMM4"
 python ../../bin/tieSil.py
 enterDir "$DIR_TUTORIAL"
-ls "$DIR_HMM4"
 HHEd -A -D -T 1 -H hmm4/macros -H hmm4/hmmdefs -M hmm5 sil.hed monophones1
 HERest -A -D -T 1 -C config  -I phones1.mlf -t 250.0 150.0 3000.0 -S train.scp -H hmm5/macros -H  hmm5/hmmdefs -M hmm6 monophones1
 HERest -A -D -T 1 -C config  -I phones1.mlf -t 250.0 150.0 3000.0 -S train.scp -H hmm6/macros -H hmm6/hmmdefs -M hmm7 monophones1
@@ -90,10 +89,20 @@ HERest -A -D -T 1 -C config -I aligned.mlf -t 250.0 150.0 3000.0 -S train.scp -H
 HERest -A -D -T 1 -C config -I aligned.mlf -t 250.0 150.0 3000.0 -S train.scp -H hmm8/macros -H hmm8/hmmdefs -M hmm9 monophones1
 echo "----------Done realigning----------"
 
+echo "----------Making Triphones from Monophones----------"
+HLEd -A -D -T 1 -n triphones1 -l '*' -i wintri.mlf mktri.led aligned.mlf
+julia ../bin/mktrihed.jl monophones1 triphones1 mktri.hed
+HHEd -A -D -T 1 -H hmm9/macros -H hmm9/hmmdefs -M hmm10 mktri.hed monophones1 
+HERest  -A -D -T 1 -C config -I wintri.mlf -t 250.0 150.0 3000.0 -S train.scp -H hmm10/macros -H hmm10/hmmdefs -M hmm11 triphones1 
+HERest  -A -D -T 1 -C config -I wintri.mlf -t 250.0 150.0 3000.0 -s stats -S train.scp -H hmm11/macros -H hmm11/hmmdefs -M hmm12 triphones1 
+echo "----------Done triphones----------"
+
 echo "----------Config and run Julius----------"
 cp "$DIR_TUTORIAL/clara.dfa" "$DIR_MANUAL"
 cp "$DIR_TUTORIAL/clara.dict" "$DIR_MANUAL"
 cp "$DIR_HMM9/hmmdefs" "$DIR_MANUAL"
-enterDir "$DIR_MANUAL"
-julius -input mic -C clara.jconf 
+#enterDir "$DIR_MANUAL"
+#julius -input mic -C clara.jconf 
 echo "----------Done julius----------"
+
+
