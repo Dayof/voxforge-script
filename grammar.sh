@@ -95,6 +95,8 @@ julia ../bin/mktrihed.jl monophones1 triphones1 mktri.hed
 HHEd -A -D -T 1 -H hmm9/macros -H hmm9/hmmdefs -M hmm10 mktri.hed monophones1 
 HERest  -A -D -T 1 -C config -I wintri.mlf -t 250.0 150.0 3000.0 -S train.scp -H hmm10/macros -H hmm10/hmmdefs -M hmm11 triphones1 
 HERest  -A -D -T 1 -C config -I wintri.mlf -t 250.0 150.0 3000.0 -s stats -S train.scp -H hmm11/macros -H hmm11/hmmdefs -M hmm12 triphones1 
+HDMan -A -D -T 1 -b sp -n fulllist0 -g maketriphones.ded -l flog dict-tri dict
+julia ../bin/fixfulllist.jl fulllist0 monophones0 fulllist
 echo "----------Done triphones----------"
 
 echo "----------Config and run Julius----------"
