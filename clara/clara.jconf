@@ -14,6 +14,7 @@
 -dfa clara.dfa     # finite state automaton grammar file
 -v clara.dict      # pronunciation dictionary
 -h hmmdefs    # acoustic HMM (ascii or Julius binary)
+-hlist tiedlist     # HMMList to map logical phone to physical
 -smpFreq 16000	    # sampling rate (Hz)
 -spmodel "sp"		    # name of a short-pause silence model
 -multipath          # force enable MULTI-PATH model handling

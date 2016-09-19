@@ -1,0 +1,13 @@
+RO 100 "stats"
+
+TR 0
+
+QS  "R_V-Oral"      { *+a,*+e,*+i,*+o,*+u,*+O,*+E }
+QS  "R_V-Front"     { *+i,*+E,*+e }
+QS  "R_V-Central"   { *+a }
+QS  "R_V-Back"      { *+u,*+o,*+O }
+QS  "R_V-Aberta"    { *+a,*+E,*+O }
+ 
+TR 2
+
+

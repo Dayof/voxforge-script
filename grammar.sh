@@ -17,6 +17,7 @@ DIR_HMM0="$DIR_TUTORIAL/hmm0"
 DIR_HMM3="$DIR_TUTORIAL/hmm3" 
 DIR_HMM4="$DIR_TUTORIAL/hmm4"
 DIR_HMM9="$DIR_TUTORIAL/hmm9" 
+DIR_HMM15="$DIR_TUTORIAL/hmm15" 
 
 enterDir()
 { 
@@ -97,14 +98,19 @@ HERest  -A -D -T 1 -C config -I wintri.mlf -t 250.0 150.0 3000.0 -S train.scp -H
 HERest  -A -D -T 1 -C config -I wintri.mlf -t 250.0 150.0 3000.0 -s stats -S train.scp -H hmm11/macros -H hmm11/hmmdefs -M hmm12 triphones1 
 HDMan -A -D -T 1 -b sp -n fulllist0 -g maketriphones.ded -l flog dict-tri dict
 julia ../bin/fixfulllist.jl fulllist0 monophones0 fulllist
+julia ../bin/mkclscript.jl monophones0 tree.hed
+HHEd -A -D -T 1 -H hmm12/macros -H hmm12/hmmdefs -M hmm13 tree.hed triphones1 
+HERest -A -D -T 1 -T 1 -C config -I wintri.mlf  -t 250.0 150.0 3000.0 -S train.scp -H hmm13/macros -H hmm13/hmmdefs -M hmm14 tiedlist
+HERest -A -D -T 1 -T 1 -C config -I wintri.mlf  -t 250.0 150.0 3000.0 -S train.scp -H hmm14/macros -H hmm14/hmmdefs -M hmm15 tiedlist
 echo "----------Done triphones----------"
 
 echo "----------Config and run Julius----------"
 cp "$DIR_TUTORIAL/clara.dfa" "$DIR_MANUAL"
 cp "$DIR_TUTORIAL/clara.dict" "$DIR_MANUAL"
-cp "$DIR_HMM9/hmmdefs" "$DIR_MANUAL"
-#enterDir "$DIR_MANUAL"
-#julius -input mic -C clara.jconf 
+cp "$DIR_TUTORIAL/tiedlist" "$DIR_MANUAL"
+cp "$DIR_HMM15/hmmdefs" "$DIR_MANUAL"
+enterDir "$DIR_MANUAL"
+julius -input mic -C clara.jconf 
 echo "----------Done julius----------"
 
 
