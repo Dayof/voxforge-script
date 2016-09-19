@@ -13,6 +13,8 @@ DIR_TUTORIAL="$HOME/voxforge/tutorial"
 DIR_TRAIN="$HOME/voxforge/train" 
 DIR_WAV="$HOME/voxforge/wav" 
 DIR_HMM0="$DIR_TUTORIAL/hmm0" 
+DIR_HMM3="$DIR_TUTORIAL/hmm3" 
+DIR_HMM4="$DIR_TUTORIAL/hmm4" 
 
 enterDir()
 { 
@@ -60,3 +62,22 @@ echo "----------Done hmmdefs----------"
 echo "----------Generating macros----------"
 python ../../bin/macros.py
 echo "----------Done macros----------"
+
+echo "----------Re-estimate hmmdefs 3 times----------"
+enterDir "$DIR_TUTORIAL"
+HERest -A -D -T 1 -C config -I phones0.mlf -t 250.0 150.0 1000.0 -S train.scp -H hmm0/macros -H hmm0/hmmdefs -M hmm1 monophones0
+HERest -A -D -T 1 -C config -I phones0.mlf -t 250.0 150.0 1000.0 -S train.scp -H hmm1/macros -H hmm1/hmmdefs -M hmm2 monophones0
+HERest -A -D -T 1 -C config -I phones0.mlf -t 250.0 150.0 1000.0 -S train.scp -H hmm2/macros -H hmm2/hmmdefs -M hmm3 monophones0
+echo "----------Done re-estimate----------"
+
+echo "----------Tie sp model----------"
+cp -r "$DIR_HMM3"/* "$DIR_HMM4"
+cp "$DIR_HMM0/sil_hmm.txt" "$DIR_HMM4"
+enterDir "$DIR_HMM4"
+python ../../bin/tieSil.py
+enterDir "$DIR_TUTORIAL"
+ls "$DIR_HMM4"
+HHEd -A -D -T 1 -H hmm4/macros -H hmm4/hmmdefs -M hmm5 sil.hed monophones1
+HERest -A -D -T 1 -C config  -I phones1.mlf -t 250.0 150.0 3000.0 -S train.scp -H hmm5/macros -H  hmm5/hmmdefs -M hmm6 monophones1
+HERest -A -D -T 1 -C config  -I phones1.mlf -t 250.0 150.0 3000.0 -S train.scp -H hmm6/macros -H hmm6/hmmdefs -M hmm7 monophones1
+echo "----------Done tie----------"
