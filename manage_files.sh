@@ -7,13 +7,15 @@ DIR_SCRIPTS="$LOCAL_DIR/scripts"
 DIR_CLARA="$LOCAL_DIR/clara" 
 DIR_SPEAKER_01="$DIR_CLARA/wav/speaker_01" 
 
-DIR_BIN="$HOME/voxforge/bin" 
+DIR_VF="$HOME/voxforge"
+
+DIR_BIN="$DIR_VF/bin/" 
 DIR_HTK="$DIR_BIN/htk" 
 DIR_JULIUS="$DIR_BIN/julius-4.3.1" 
 
-DIR_TUTORIAL="$HOME/voxforge/tutorial" 
-DIR_TRAIN="$HOME/voxforge/train" 
-DIR_MANUAL="$HOME/voxforge/manual" 
+DIR_TUTORIAL="$DIR_VF/tutorial" 
+DIR_TRAIN="$DIR_VF/train" 
+DIR_MANUAL="$DIR_VF/manual" 
 DIR_WAV="$DIR_TRAIN/wav" 
 DIR_MFCC="$DIR_TRAIN/mfcc" 
 DIR_MFCC_01="$DIR_MFCC/speaker_01" 
@@ -49,6 +51,8 @@ copyFiles()
 	echo "-----Copy file $1 to folder $2-----"
 }
 
+createDir "$DIR_VF"
+createDir "$DIR_BIN"
 createDir "$DIR_TUTORIAL"
 createDir "$DIR_TRAIN"
 createDir "$DIR_MANUAL"
