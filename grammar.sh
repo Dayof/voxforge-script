@@ -1,5 +1,7 @@
 #!/bin/bash
 
+QTDE_WAV_FILES=65
+
 SOURCE="${BASH_SOURCE[0]}"
 LOCAL_DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
 DIR_GRAMMAR="$LOCAL_DIR/scripts" 
@@ -34,6 +36,11 @@ oHFuck()
 	exit
 	
 }
+
+enterDir "$DIR_CLARA"
+echo "----------Convert wav files to mfcc----------"
+python ../scripts/wav2mfcc.py "$QTDE_WAV_FILES" || oHFuck
+echo "----------Done mfcc----------"
 
 enterDir "$DIR_TUTORIAL"
 echo "----------Generating dict files----------"
