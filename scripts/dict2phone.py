@@ -27,7 +27,7 @@ with open("wlist") as w:
 # lenght of total words of wlist
 total_words_wlist=len(list_clara_lexicon)
 
-# collet data from clara_lexicon (dict)
+# collet data from clara_lexicon (dict all words)
 with open("clara_lexicon") as f:
 	for line in f:
 		line=line.replace('\t',' ').replace('\n','')
@@ -60,7 +60,7 @@ for k,v in ord_wp.iteritems():
 
 file_dic.close()
 
-# collet data from wlist (words collected from prompts.txt)
+# collet data from dict (dict clara)
 with open("dict") as w:
 	for line in w:
 		line=line.replace('\t',' ').replace('\n','')
@@ -74,16 +74,11 @@ total_words_clara_dict=len(list_clara_dict)
 # search for missing words
 [missing_words.append(x) for x in list_clara_lexicon if x not in list_clara_dict]
 
-for x in list_clara_dict: 
-	if x not in list_clara_lexicon: 
-		print x
-
 # write data on phones file
 for i in phones:
 	file_phones.write(i+'\n')
 	if i != "sp":
 		file_phones0.write(i+'\n')
-
 
 # write data on statistic file
 file_phones_est.write("Phone Counts\n---------------------\n")
