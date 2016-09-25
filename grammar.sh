@@ -1,6 +1,6 @@
 #!/bin/bash
 
-QTDE_WAV_FILES=65
+QTDE_WAV_FILES=26
 
 SOURCE="${BASH_SOURCE[0]}"
 LOCAL_DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
@@ -102,7 +102,7 @@ HERest -A -D -T 1 -C config  -I phones1.mlf -t 250.0 150.0 3000.0 -S train.scp -
 echo "----------Done tie----------"
 
 echo "----------Realigning the Training Data----------"
-HVite -A -D -T 1 -l '*' -o SWT -b "</s>" -C config -H hmm7/macros -H hmm7/hmmdefs -i aligned.mlf -m -t 250.0 150.0 1000.0 -y lab -a -I words.mlf -S train.scp dict monophones1> HVite_log || oHFuck
+HVite -A -D -T 1 -l '*' -o SWT -b silence -C config -H hmm7/macros -H hmm7/hmmdefs -i aligned.mlf -m -t 250.0 150.0 1000.0 -y lab -a -I words.mlf -S train.scp dict monophones1> HVite_log || oHFuck
 HERest -A -D -T 1 -C config -I aligned.mlf -t 250.0 150.0 3000.0 -S train.scp -H hmm7/macros -H hmm7/hmmdefs -M hmm8 monophones1 || oHFuck
 HERest -A -D -T 1 -C config -I aligned.mlf -t 250.0 150.0 3000.0 -S train.scp -H hmm8/macros -H hmm8/hmmdefs -M hmm9 monophones1 || oHFuck
 echo "----------Done realigning----------"
@@ -122,12 +122,18 @@ HERest -A -D -T 1 -T 1 -C config -I wintri.mlf  -t 250.0 150.0 3000.0 -S train.s
 echo "----------Done triphones----------"
 
 echo "----------Config and run Julius----------"
-cp "$DIR_TUTORIAL/clara.dfa" "$DIR_MANUAL" || oHFuck
-cp "$DIR_TUTORIAL/clara.dict" "$DIR_MANUAL" || oHFuck
-cp "$DIR_TUTORIAL/tiedlist" "$DIR_MANUAL" || oHFuck
-cp "$DIR_HMM15/hmmdefs" "$DIR_MANUAL" || oHFuck
-enterDir "$DIR_MANUAL"
-julius -input mic -C clara.jconf || oHFuck
+#cp "$DIR_TUTORIAL/clara.dfa" "$DIR_MANUAL" || oHFuck
+#cp "$DIR_TUTORIAL/clara.dict" "$DIR_MANUAL" || oHFuck
+#cp "$DIR_TUTORIAL/tiedlist" "$DIR_MANUAL" || oHFuck
+#cp "$DIR_HMM15/hmmdefs" "$DIR_MANUAL" || oHFuck
+#enterDir "$DIR_MANUAL"
+#julius -input mic -C clara.jconf || oHFuck
 echo "----------Done julius----------"
+
+echo "----------Test LM----------"
+HParse clara.gram wdnet || oHFuck
+HVite -A -D -T 1 -T 1 -C config -H hmm15/macros -H hmm15/hmmdefs -S train.scp -l '*' -i recout.mlf -w wdnet -p 0.0 -s 5.0 dict tiedlist || oHFuck
+HResults -I words.mlf tiedlist recout.mlf
+echo "----------Done test----------"
 
 

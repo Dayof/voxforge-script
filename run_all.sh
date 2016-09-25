@@ -5,11 +5,9 @@ LOCAL_DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
 
 DIR_SCRIPTS="$LOCAL_DIR/scripts" 
 DIR_CLARA="$LOCAL_DIR/clara" 
+DIR_VF="$HOME/voxforge"
 
-cd "$DIR_CLARA"
-python ../scripts/wav2mfcc.py
-
-cd ..
+sudo rm -rf "$DIR_VF"
 
 chmod +x manage_files.sh
 chmod +x grammar.sh

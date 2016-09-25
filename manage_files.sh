@@ -67,6 +67,7 @@ copyFiles "$DIR_CLARA/prompts.txt" "$DIR_TUTORIAL"
 copyFiles "$DIR_CLARA/clara_lexicon" "$DIR_TUTORIAL"
 copyFiles "$DIR_CLARA/codetrain.scp" "$DIR_TUTORIAL"
 copyFiles "$DIR_CLARA/train.scp" "$DIR_TUTORIAL"
+copyFiles "$DIR_CLARA/clara.gram" "$DIR_TUTORIAL"
 
 copyFiles "$DIR_SCRIPTS/tieSil.py" "$DIR_BIN"
 copyFiles "$DIR_SCRIPTS/macros.py" "$DIR_BIN"
