@@ -1,8 +1,5 @@
-% NS_B
-<s>		sil
-
-% NS_E
-</s>		sil
+% NS
+silence		sil
 
 % FLAG
 clara    	k l a r a
