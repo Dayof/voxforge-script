@@ -34,7 +34,7 @@ with open("clara_lexicon") as f:
 		line=line.replace('[','').replace(']','').split(' ')
 		# dict of all words in dict and their phones
 		words_and_phones[line[0]] = line[1:]
-		if line[0] != "<s>" and line[0] != "</s>":
+		if line[0] != "silence":
 			words_and_phones[line[0]].append("sp")
 
 		# loop to count occurence of each phone

@@ -32,8 +32,7 @@ function prompts2wlist(prompts, wlist)
       wordhash[word]=1
     end
   end
-  wordhash["<s>"]=1
-  wordhash["</s>"]=1
+  wordhash["silence"]=1
 
   wordlist = keys(wordhash) # returns an iterator
   wlist_arr=Array(String,length(wordhash))

@@ -1,65 +1,26 @@
-*/sample001 direita
-*/sample002 esquerda
-*/sample003 baixo
-*/sample004 cima
-*/sample005 centralizar
-*/sample006 menu
-*/sample007 configuração
-*/sample008 configurações
-*/sample009 iniciar
-*/sample010 pausar
-*/sample011 parar
-*/sample012 aumentar visão
-*/sample013 afastar visão
-*/sample014 girar direita
-*/sample015 girar esquerda
-*/sample016 iniciar gravação
-*/sample017 parar gravação
-*/sample018 inverter controle
-*/sample019 com controle
-*/sample020 sem controle
-*/sample021 com controles
-*/sample022 sem controles
-*/sample023 com marcador
-*/sample024 sem marcador
-*/sample025 com microfone
-*/sample026 sem microfone
-*/sample027 com centralizar
-*/sample028 sem centralizar
-*/sample029 achar ferramenta
-*/sample030 clara
-*/sample031 inverte controle
-*/sample032 inverter controles
-*/sample033 inverte controles
-*/sample034 centraliza
-*/sample035 configurar
-*/sample036 inicia
-*/sample037 pausa
-*/sample038 para
-*/sample039 com centraliza
-*/sample040 sem centraliza
-*/sample041 retomar
-*/sample042 retoma
-*/sample043 aumentar camera
-*/sample044 afastar camera
-*/sample045 gira direita
-*/sample046 gira esquerda
-*/sample047 girar para direita
-*/sample048 girar para esquerda
-*/sample049 gira para direita
-*/sample050 gira para esquerda
-*/sample051 girar pra direita
-*/sample052 girar pra esquerda
-*/sample053 gira pra direita
-*/sample054 gira pra esquerda
-*/sample055 inicia gravação
-*/sample056 pausar gravação
-*/sample057 pausa gravação
-*/sample058 para gravação
-*/sample059 retomar gravação
-*/sample060 retoma gravação
-*/sample061 com marcado
-*/sample062 sem marcado
-*/sample063 acha ferramenta
-*/sample064 procurar ferramenta
-*/sample065 procura ferramenta
+*/sample001 direita esquerda baixo cima centralizar menu 
+*/sample002 configurações iniciar pausar parar aumentar
+*/sample003 visão afastar girar gravação inverter controle
+*/sample004 com sem controles marcador microfone achar
+*/sample005 ferramenta clara inverte centraliza configurar 
+*/sample006 pausa para retomar retoma camera configuração
+*/sample007 marcado acha procurar procura inicia gira
+*/sample008 pra abordagem acabem acostuma acumula adjunto
+*/sample009 afiada age agita águia fiz foguete fonética
+*/sample010 fonte galáxia gambiarra gibi global grade
+*/sample011 grande gravidade gravou ideal imensidão nação
+*/sample012 numérico direito esquenta esquisito direções
+*/sample013 painel panela direita esquerda clara ferramenta
+*/sample014 direita direita direita direita direita direita
+*/sample015 esquerda esquerda esquerda esquerda esquerda esquerda
+*/sample016 centralizar centralizar centralizar centralizar 
+*/sample017 clara clara clara clara clara clara
+*/sample018 iniciar iniciar iniciar inicia inicia inicia
+*/sample019 configuração configuração configuração 
+*/sample020 configurações configurações configurações
+*/sample021 baixo baixo baixo baixo baixo baixo
+*/sample022 cima cima cima cima cima cima
+*/sample023 clara clara clara clara clara clara
+*/sample024 clima clone cobertura codinome coisa
+*/sample025 clara clara clara clara clara clara
+*/sample026 bicicleta chiclete tecla núcleo folclore
