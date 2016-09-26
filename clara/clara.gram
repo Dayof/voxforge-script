@@ -13,8 +13,7 @@ $switch = inverte | inverter;
 $device = marcador | marcado | microfone;
 $controlVision = aumentar | afastar;
 
-$cmd = clara | $spin | $prep | $vision | $find | ferramenta | gravação | $directionsX | $directionsY |
-              $actions | $center | $flow | $joystick | $turn | $switch | $device | $controlVision;
-(
-silence < $cmd > silence
-)
+$cmd = clara | $actions | $center | $flow;
+$comb = $controlVision $vision | $spin [$prep] $directionsX | $actions gravação | 
+	$turn ($joystick | $device | $center) | $find ferramenta | $switch $joystick;
+(silence ( $comb | $cmd ) silence)

@@ -23,6 +23,7 @@ DIR_HMM3="$DIR_TUTORIAL/hmm3"
 DIR_HMM4="$DIR_TUTORIAL/hmm4"
 DIR_HMM9="$DIR_TUTORIAL/hmm9" 
 DIR_HMM15="$DIR_TUTORIAL/hmm15" 
+DIR_HMM21="$DIR_TUTORIAL/hmm21" 
 
 enterDir()
 { 
@@ -54,6 +55,11 @@ echo "----------Done word lists----------"
 echo "----------Generating monophones 0 and 1----------"
 python ../bin/dict2phone.py || oHFuck
 echo "----------Done monophones 0 and 1----------"
+
+echo "----------Generating prompt file----------"
+HParse clara.gram wdnet || oHFuck
+HSGen -l -n 200 wdnet dict > testprompts || oHFuck
+echo "----------Done prompt file----------"
 
 echo "----------Generating MLF (Master Label File) from prompt file----------"
 julia ../bin/prompts2mlf.jl prompts.txt words.mlf || oHFuck
@@ -102,37 +108,53 @@ HERest -A -D -T 1 -C config  -I phones1.mlf -t 250.0 150.0 3000.0 -S train.scp -
 echo "----------Done tie----------"
 
 echo "----------Realigning the Training Data----------"
-HVite -A -D -T 1 -l '*' -o SWT -b silence -C config -H hmm7/macros -H hmm7/hmmdefs -i aligned.mlf -m -t 250.0 150.0 1000.0 -y lab -a -I words.mlf -S train.scp dict monophones1> HVite_log || oHFuck
+HVite -A -D -T 1 -l '*' -o SWT -b silence -C config -H hmm7/macros -H hmm7/hmmdefs -i aligned.mlf -m -t 250.0 150.0 1000.0 -y lab -a -I words.mlf -S train.scp dict monophones1 > HVite_log || oHFuck
 HERest -A -D -T 1 -C config -I aligned.mlf -t 250.0 150.0 3000.0 -S train.scp -H hmm7/macros -H hmm7/hmmdefs -M hmm8 monophones1 || oHFuck
 HERest -A -D -T 1 -C config -I aligned.mlf -t 250.0 150.0 3000.0 -S train.scp -H hmm8/macros -H hmm8/hmmdefs -M hmm9 monophones1 || oHFuck
+HERest -A -D -T 1 -C config -I aligned.mlf -t 250.0 150.0 3000.0 -S train.scp -H hmm9/macros -H hmm9/hmmdefs -M hmm10 monophones1 || oHFuck
+HERest -A -D -T 1 -C config -I aligned.mlf -t 250.0 150.0 3000.0 -S train.scp -H hmm10/macros -H hmm10/hmmdefs -M hmm11 monophones1 || oHFuck
+HERest -A -D -T 1 -C config -I aligned.mlf -t 250.0 150.0 3000.0 -S train.scp -H hmm11/macros -H hmm11/hmmdefs -M hmm12 monophones1 || oHFuck
+HERest -A -D -T 1 -C config -I aligned.mlf -t 250.0 150.0 3000.0 -S train.scp -H hmm12/macros -H hmm12/hmmdefs -M hmm13 monophones1 || oHFuck
+HERest -A -D -T 1 -C config -I aligned.mlf -t 250.0 150.0 3000.0 -S train.scp -H hmm13/macros -H hmm13/hmmdefs -M hmm14 monophones1 || oHFuck
+HERest -A -D -T 1 -C config -I aligned.mlf -t 250.0 150.0 3000.0 -S train.scp -H hmm14/macros -H hmm14/hmmdefs -M hmm15 monophones1 || oHFuck
+HERest -A -D -T 1 -C config -I aligned.mlf -t 250.0 150.0 3000.0 -S train.scp -H hmm15/macros -H hmm15/hmmdefs -M hmm16 monophones1 || oHFuck
 echo "----------Done realigning----------"
 
 echo "----------Making Triphones from Monophones----------"
 HLEd -A -D -T 1 -n triphones1 -l '*' -i wintri.mlf mktri.led aligned.mlf || oHFuck
 julia ../bin/mktrihed.jl monophones1 triphones1 mktri.hed || oHFuck
-HHEd -A -D -T 1 -H hmm9/macros -H hmm9/hmmdefs -M hmm10 mktri.hed monophones1 || oHFuck 
-HERest  -A -D -T 1 -C config -I wintri.mlf -t 250.0 150.0 3000.0 -S train.scp -H hmm10/macros -H hmm10/hmmdefs -M hmm11 triphones1 || oHFuck
-HERest  -A -D -T 1 -C config -I wintri.mlf -t 250.0 150.0 3000.0 -s stats -S train.scp -H hmm11/macros -H hmm11/hmmdefs -M hmm12 triphones1 || oHFuck
+HHEd -A -D -T 1 -H hmm16/macros -H hmm16/hmmdefs -M hmm17 mktri.hed monophones1 || oHFuck 
+HERest  -A -D -T 1 -C config -I wintri.mlf -t 250.0 150.0 3000.0 -s stats -S train.scp -H hmm17/macros -H hmm17/hmmdefs -M hmm18 triphones1 || oHFuck
+HERest  -A -D -T 1 -C config -I wintri.mlf -t 250.0 150.0 3000.0 -s stats -S train.scp -H hmm18/macros -H hmm18/hmmdefs -M hmm19 triphones1 || oHFuck
+HERest  -A -D -T 1 -C config -I wintri.mlf -t 250.0 150.0 3000.0 -s stats -S train.scp -H hmm19/macros -H hmm19/hmmdefs -M hmm20 triphones1 || oHFuck
+HERest  -A -D -T 1 -C config -I wintri.mlf -t 250.0 150.0 3000.0 -s stats -S train.scp -H hmm20/macros -H hmm20/hmmdefs -M hmm21 triphones1 || oHFuck
 HDMan -A -D -T 1 -b sp -n fulllist0 -g maketriphones.ded -l flog dict-tri dict || oHFuck
 julia ../bin/fixfulllist.jl fulllist0 monophones0 fulllist || oHFuck
 julia ../bin/mkclscript.jl monophones0 tree.hed || oHFuck
-HHEd -A -D -T 1 -H hmm12/macros -H hmm12/hmmdefs -M hmm13 tree.hed triphones1 || oHFuck
-HERest -A -D -T 1 -T 1 -C config -I wintri.mlf  -t 250.0 150.0 3000.0 -S train.scp -H hmm13/macros -H hmm13/hmmdefs -M hmm14 tiedlist || oHFuck
-HERest -A -D -T 1 -T 1 -C config -I wintri.mlf  -t 250.0 150.0 3000.0 -S train.scp -H hmm14/macros -H hmm14/hmmdefs -M hmm15 tiedlist || oHFuck
+HHEd -A -D -T 1 -H hmm20/macros -H hmm20/hmmdefs -M hmm21 tree.hed triphones1 > log_tri || oHFuck
+HERest -A -D -T 1 -T 1 -C config -I wintri.mlf  -t 250.0 150.0 1000.0 -S train.scp -H hmm21/macros -H hmm21/hmmdefs -M hmm21 tiedlist || oHFuck
+HERest -A -D -T 1 -T 1 -C config -I wintri.mlf  -t 250.0 150.0 1000.0 -S train.scp -H hmm21/macros -H hmm21/hmmdefs -M hmm21 tiedlist || oHFuck
+HERest -A -D -T 1 -T 1 -C config -I wintri.mlf  -t 250.0 150.0 1000.0 -S train.scp -H hmm21/macros -H hmm21/hmmdefs -M hmm21 tiedlist || oHFuck
+HERest -A -D -T 1 -T 1 -C config -I wintri.mlf  -t 250.0 150.0 1000.0 -S train.scp -H hmm21/macros -H hmm21/hmmdefs -M hmm21 tiedlist || oHFuck
 echo "----------Done triphones----------"
 
 echo "----------Config and run Julius----------"
-#cp "$DIR_TUTORIAL/clara.dfa" "$DIR_MANUAL" || oHFuck
-#cp "$DIR_TUTORIAL/clara.dict" "$DIR_MANUAL" || oHFuck
-#cp "$DIR_TUTORIAL/tiedlist" "$DIR_MANUAL" || oHFuck
-#cp "$DIR_HMM15/hmmdefs" "$DIR_MANUAL" || oHFuck
-#enterDir "$DIR_MANUAL"
-#julius -input mic -C clara.jconf || oHFuck
+cp "$DIR_TUTORIAL/clara.dfa" "$DIR_MANUAL" || oHFuck
+cp "$DIR_TUTORIAL/clara.dict" "$DIR_MANUAL" || oHFuck
+cp "$DIR_TUTORIAL/tiedlist" "$DIR_MANUAL" || oHFuck
+cp "$DIR_HMM21/hmmdefs" "$DIR_MANUAL" || oHFuck
+#cp "$DIR_TUTORIAL/config" "$DIR_MANUAL" || oHFuck
+#cp "$DIR_CLARA/LaPSAM1.5.tiedlist" "$DIR_MANUAL" || oHFuck
+#cp "$DIR_CLARA/LaPSAM1.5.am.bin" "$DIR_MANUAL" || oHFuck
+cp "$DIR_CLARA/edaz.conf" "$DIR_MANUAL" || oHFuck
+#cp "$DIR_CLARA/clara2.jconf" "$DIR_MANUAL" || oHFuck
+cp "$DIR_CLARA/clara3.jconf" "$DIR_MANUAL" || oHFuck
+enterDir "$DIR_MANUAL"
+julius -input mic -C clara3.jconf || oHFuck
 echo "----------Done julius----------"
 
 echo "----------Test LM----------"
-HParse clara.gram wdnet || oHFuck
-HVite -A -D -T 1 -T 1 -C config -H hmm15/macros -H hmm15/hmmdefs -S train.scp -l '*' -i recout.mlf -w wdnet -p 0.0 -s 5.0 dict tiedlist || oHFuck
+HVite -A -D -T 1 -T 1 -C config -H hmm21/macros -H hmm21/hmmdefs -S train.scp -l '*' -i recout.mlf -w wdnet -p 0.0 -s 5.0 dict tiedlist || oHFuck
 HResults -I words.mlf tiedlist recout.mlf
 echo "----------Done test----------"
 

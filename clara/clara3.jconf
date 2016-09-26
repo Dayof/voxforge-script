@@ -1,0 +1,191 @@
+######################################################################
+# Julius Conf File
+######################################################################
+
+
+######################################################################
+### GRAMMAR
+######################################################################
+-dfa clara.dfa -v clara.dict
+
+######################################################################
+### Speech segment detection by level and zero-cross
+######################################################################
+-cutsilence         	# detection on.
+#-nocutsilence       	# detection off.
+-lv 3000         		# level threshold (0-32767).
+-zc 150            		# zero-cross threshold (times in sec.).
+-headmargin 400      	# head silence margin (msec).
+-tailmargin 400      	# tail silence margin (msec).
+-rejectshort 250        # reject shorter input (msec).
+
+
+######################################################################
+### Decoding option
+######################################################################
+-realtime         		# force real-time processing.
+#-norealtime         	# force non real-time processin.
+
+
+######################################################################
+### Speech Input Source (Audio Input)
+######################################################################
+## select one (default: mfcfile)
+#-input mfcfile         			# MFCC file in HTK parameter file format
+#-input rawfile         			# raw wavefile (auto-detect format)
+                        			# WAV(16bit) or
+                        			# RAW(16bit(signed short),mono,big-endian)
+                        			# AIFF,AU (with libsndfile extension)
+	 								# other than 16kHz, sampling rate should
+	 								# be specified by "-smpFreq" option
+-input mic             				# direct microphone input
+	 								# device name can be specified via env.
+	 								# val. "AUDIODEV"
+#-input netaudio -NA host:0    		# direct input from DatLink(NetAudio) host
+#-input adinnet -adport portnum 	# via adinnet network client
+#-input stdin	  					# from standard tty input (pipe)
+
+#-filelist audiolist  	# specify file list to be recognized in batch mode.
+#-notypecheck			# will disab. the check and use the input vector as is.
+#-nostrip      			# switch OFF dropping of invalid input segment.
+-zmean	       			# enable/disabled DC offset removal
+#-nozmean				# (invalid for mfcfile input)
+						# (default: disabled)
+
+
+######################################################################
+### Isolated Word
+######################################################################
+## Multiple dictionary
+#-w clara.dict 			  	# word dictionary.
+#-wsil sil sil NULL      	# head / tail silence models to be appended.
+
+
+######################################################################
+#### Speech Analysis Parameters
+######################################################################
+#-smpPeriod 227	     	# sampling period (ns) (= 10000000 / smpFreq)
+						# (default: 625 = 16000Hz).
+-smpFreq 16000	  		# sampling rate (Hz)
+						# (default: 16000).
+#-fsize 400    			# window size (samples)
+						# (default: 400).
+#-fshift 160	  		# frame shift (samples)
+						# (default: 160).
+#-delwin 2     			# delta window (frames)
+						# (default: 2).
+#-hifreq -1    			# cut-off hi frequency (Hz) (-1: disable)
+						# (default: -1).
+#-lofreq -1    			# cut-off low frequency (Hz) (-1: disable)
+						# (default: -1).
+#-preemph 0.97			# Pre-emphasis coefficient.
+						# (default: 0.97).
+#-fbank 24				# Number of filterbank channels.
+						# (default:24).
+-enormal				# Enable/disable normalizing log energy
+#-noenormal				# (default: disabled Julius / enable HTK).
+-zmeanframe    			# with speech input enables/disables
+#-nozmeanframe			# frame-wise DC offset removal
+						# (default: disabled).
+
+
+######################################################################
+#### Real-time Cepstral Mean Normalization
+######################################################################
+#-cmnload filename   	# load initial CMN param from file on .
+#-cmnsave filename   	# save CMN param to file (update per input, overwrite).
+
+
+######################################################################
+#### Misc AM Options
+######################################################################
+-htkconf edaz.conf 	# parameter values are switched from Julius defaults
+						# to HTK defaults.
+
+
+######################################################################
+#### Recognizer and Search ( -SR )
+######################################################################
+## Context-dependency handling will be enabled according to the model type.
+## Try below if julius wrongly detect the type of hmmdefs.
+#-no_ccd    		# disable context-dependency handling.
+-force_ccd     	# enable context-dependency handling.
+-cmalpha 0.05		# Smoothing patemeter for confidence scoring
+					# (default: 0.05).
+
+## For insertion of context-free short-term inter-word pauses between words
+## (multi-path version only)
+-iwsp	    		# append a skippable sp model at all word ends
+
+-transp -20.0		# additional insertion penalty for transparent words.
+					# (default: 0.0)
+
+
+######################################################################
+#### 1st Pass Parameters
+######################################################################
+-lmp 15.0 10.0		# (weight penalty) LM weights and words insertion
+					# penalties for 1st pass. (N-gram)
+-penalty1 -5.0		# (Grammar) word insertion penalty for the first pass
+					# (default: 0.0).
+-b 2000				# Envelope beam width (number of hypothesis) for
+					# rank beam in number of HMM nodes on the 1st pass
+					# (decoder become very slow)... 400 (monophone),
+					# 800 (triphone), or 1000 (triphone, setup=v2.1).
+-progout        	# Enable progressive output of the partial results
+					# on the 1st pass.
+
+
+######################################################################
+#### 2st Pass Parameters
+######################################################################
+-lmp2 15.0 10.0		# (weight penalty) LM weights and words insertion
+					# penalties for 2st pass. (N-gram)
+-b2 200	            # Envelope beam width (number of hypothesis) for
+					# rank beam in number of HMM nodes on the 2st pass
+					# (decoder become very slow) (default: 30).
+-sb 300				# Score envelope width for enveloped scoring.
+					# (default: 80.0)
+#-s 500             # Stack size i.e. hypotheses stack size on 2nd pass.
+					# (default: 500)
+#-m 10000           # hypotheses overflow threshold
+					# (default: 2000).
+#-n 1          	    # number of candidates Julius tries to find
+		            # (default: 10 (standard) or 1 (fast or v2.1)).	X
+#-output 1          # top N sentence hypo. to be output at the end of search
+					# (default: 1).
+#-lookuprange 5     # lookup range for word expansion
+					# (default: 5).
+#-looktrellis	  	# words survived on the first pass instead of expanding
+					# all the words predicted by grammar
+					# (deafult: disabled).
+
+
+######################################################################
+### Acoustic HMM and Parameters
+######################################################################
+-h hmmdefs				# HMM model(ascii format or
+								# Julius binary format).
+-hlist tiedlist	# triphone model needs HMMList that maps
+								# logical triphone to physical ones.
+#-tmix 2						# Gaussian Pruning, number of mixtures to
+								# select in a mixture pdf. This default value
+								# is optimized for IPA99's PTM, with 64
+								# Gaussians per codebook.
+-spmodel "sp"					# Short pause model name to be treated
+								# as special HMM model norealtime.
+
+## Select Gaussian pruning algorithm.
+## default: safe (standard), beam (fast).
+-gprune safe	  				# safe pruning, accurate but slow.
+#-gprune heuristic   			# heuristic pruning.
+#-gprune beam	  				# beam pruning, fast but sensitive.
+#-gprune none	  				# no pruning.
+
+## (PTM/triphone) switch computation method of IWCD on 1st pass.
+## default: -iwcd1 avg
+#-iwcd1 best 5  			# assign average of N-best likelihood
+						# of the same context.
+#-iwcd1 max 			# assign maximum likelihood of the same context.
+#-iwcd1 avg 			# assign average likelihood of the same context.
+#-iwsppenalty -5.0   	# transition penalty for the appended sp models.

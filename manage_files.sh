@@ -22,7 +22,7 @@ DIR_MFCC_01="$DIR_MFCC/speaker_01"
 
 createHMMs()
 {
-	for i in {0..15}
+	for i in {0..21}
 	do
 		createDir "$DIR_TUTORIAL/hmm$i"
 	done
