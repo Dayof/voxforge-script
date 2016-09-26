@@ -5,7 +5,7 @@ QTDE_WAV_FILES=26
 SOURCE="${BASH_SOURCE[0]}"
 LOCAL_DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
 DIR_GRAMMAR="$LOCAL_DIR/scripts" 
-DIR_CLARA="$LOCAL_DIR/clara" 
+DIR_CLARA="$LOCAL_DIR/clara_minimal" 
 
 DIR_VF="$HOME/voxforge"
 
@@ -138,6 +138,12 @@ HERest -A -D -T 1 -T 1 -C config -I wintri.mlf  -t 250.0 150.0 1000.0 -S train.s
 HERest -A -D -T 1 -T 1 -C config -I wintri.mlf  -t 250.0 150.0 1000.0 -S train.scp -H hmm21/macros -H hmm21/hmmdefs -M hmm21 tiedlist || oHFuck
 echo "----------Done triphones----------"
 
+echo "----------Test LM----------"
+#HVite -A -D -T 1 -T 1 -C config -H hmm21/macros -H hmm21/hmmdefs -S train.scp -l '*' -i recout.mlf -w wdnet -p 0.0 -s 5.0 dict tiedlist > HVite_log2 || oHFuck  
+HVite -A -D -T 1 -C config  -l '*' -o SWT -b silence -H hmm21/macros -H hmm21/hmmdefs -S train.scp -i recout.mlf  -y lab -a -I words.mlf  -p 0.0 -s 5.0 dict tiedlist > HVite_log2 || oHFuck
+HResults -I words.mlf tiedlist recout.mlf
+echo "----------Done test----------"
+
 echo "----------Config and run Julius----------"
 cp "$DIR_TUTORIAL/clara.dfa" "$DIR_MANUAL" || oHFuck
 cp "$DIR_TUTORIAL/clara.dict" "$DIR_MANUAL" || oHFuck
@@ -147,15 +153,11 @@ cp "$DIR_HMM21/hmmdefs" "$DIR_MANUAL" || oHFuck
 #cp "$DIR_CLARA/LaPSAM1.5.tiedlist" "$DIR_MANUAL" || oHFuck
 #cp "$DIR_CLARA/LaPSAM1.5.am.bin" "$DIR_MANUAL" || oHFuck
 cp "$DIR_CLARA/edaz.conf" "$DIR_MANUAL" || oHFuck
+cp "$DIR_CLARA/clara.jconf" "$DIR_MANUAL" || oHFuck
 #cp "$DIR_CLARA/clara2.jconf" "$DIR_MANUAL" || oHFuck
-cp "$DIR_CLARA/clara3.jconf" "$DIR_MANUAL" || oHFuck
+#cp "$DIR_CLARA/clara3.jconf" "$DIR_MANUAL" || oHFuck
 enterDir "$DIR_MANUAL"
-julius -input mic -C clara3.jconf || oHFuck
+julius -input mic -C clara.jconf || oHFuck
 echo "----------Done julius----------"
-
-echo "----------Test LM----------"
-HVite -A -D -T 1 -T 1 -C config -H hmm21/macros -H hmm21/hmmdefs -S train.scp -l '*' -i recout.mlf -w wdnet -p 0.0 -s 5.0 dict tiedlist || oHFuck
-HResults -I words.mlf tiedlist recout.mlf
-echo "----------Done test----------"
 
 

@@ -1,0 +1,5 @@
+$directionsX = direita | esquerda; 
+$directionsY = cima | baixo; 
+
+$cmd = clara | $directionsX | $directionsY;
+(silence ( $cmd ) silence)

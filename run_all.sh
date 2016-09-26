@@ -4,7 +4,7 @@ SOURCE="${BASH_SOURCE[0]}"
 LOCAL_DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
 
 DIR_SCRIPTS="$LOCAL_DIR/scripts" 
-DIR_CLARA="$LOCAL_DIR/clara" 
+DIR_CLARA="$LOCAL_DIR/clara_minimal" 
 DIR_VF="$HOME/voxforge"
 
 sudo rm -rf "$DIR_VF"

@@ -1,0 +1,7 @@
+sil clara sil
+
+sil direita sil
+sil esquerda sil
+
+sil cima sil
+sil baixo sil
