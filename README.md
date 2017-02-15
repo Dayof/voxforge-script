@@ -1,7 +1,7 @@
 Script VoxForge
 =============
 
-Following the tutorial offered by VoxForge, this project contains a full script to generate a HMMs Language Model.
+Following the tutorial offered by VoxForge, this project contains a full script to create acoustic model for the Julius Decoder using the HTK toolkit.
 
 ### Directories
 
